@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="有貓都可以安心備孕：3 分鐘完成家庭安心巡屋，即時取得優先行動、家人分工與家居管理建議。">
+  <title>有貓都可以安心備孕｜3 分鐘家庭安心計劃</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#1f3c1b',
+            leaf: '#8bc34a',
+            softleaf: '#edf7e4',
+            cream: '#fbfaf6'
+          },
+          fontFamily: {
+            sans: ['"PingFang HK"', '"Noto Sans HK"', '"Microsoft JhengHei"', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 14px 44px rgba(31, 60, 27, .12)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #fbfaf6; }
+    .hero-pattern {
+      background-image: radial-gradient(rgba(139, 195, 74, .22) 1.2px, transparent 1.2px);
+      background-size: 17px 17px;
+    }
+    .quiz-option {
+      transition: border-color .18s ease, background-color .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+    .quiz-option:hover { transform: translateY(-2px); }
+    .quiz-option.selected {
+      border-color: #5f9637;
+      background: #eff9e6;
+      box-shadow: 0 0 0 3px rgba(139, 195, 74, .16);
+    }
+    .quiz-option.selected .option-dot {
+      border-color: #4f8230;
+      background: #4f8230;
+      box-shadow: inset 0 0 0 4px white;
+    }
+    .step-dot.active { background: #1f3c1b; color: white; }
+    .step-dot.done { background: #8bc34a; color: #173312; }
+    .hidden-step { display: none; }
+    .faq-answer { display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-plus { transform: rotate(45deg); }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-slate-800">
+  <!-- Core promise -->
+  <div class="bg-forest px-4 py-2 text-center text-xs font-medium text-white sm:text-sm">
+    備孕安全是全家共同管理接觸風險，不是把責任推畀隻貓。
+  </div>
+
+  <header class="sticky top-0 z-40 border-b border-slate-100 bg-white/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <a href="#top" class="flex min-w-0 items-center gap-2.5" aria-label="返回頁首">
+        <div class="h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-[#dceccf] bg-white shadow-sm">
+          <img src="Mao-Li-La-Geng-Moolilakang_Profile-Pic-2.jpg" alt="毛厘啦更 Moolilakang" class="h-full w-full object-cover">
+        </div>
+        <div class="min-w-0">
+          <p class="text-[11px] font-bold tracking-wider text-[#5c8738]">MOOLILAGANG × GREENSTORE HK</p>
+          <p class="truncate text-sm font-extrabold text-slate-800 sm:text-base">養貓家庭安心巡屋</p>
+        </div>
+      </a>
+      <a href="#quiz" class="shrink-0 rounded-full bg-[#407b59] px-3.5 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-forest sm:px-5 sm:text-sm">立即做安心檢查</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero: dream outcome + fast outcome -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-[#f8fcef] via-white to-[#e7f4d9]">
+      <div class="pointer-events-none absolute -left-12 -top-14 h-56 w-56 rounded-full bg-[#d9edc2]/75 blur-2xl"></div>
+      <div class="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-55 hero-pattern"></div>
+
+      <div class="relative mx-auto grid max-w-6xl gap-8 px-4 py-11 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+        <div class="relative z-10">
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d7eac2] bg-white/90 px-3 py-1.5 text-xs font-extrabold text-[#4d7530] shadow-sm"><span>🐾</span><span>有貓家庭安心巡屋</span></div>
+          <h1 class="max-w-3xl text-3xl font-black leading-[1.16] tracking-tight text-[#173312] sm:text-5xl">有貓都可以安心備孕</h1>
+          <h2 class="mt-3 max-w-3xl text-xl font-extrabold leading-snug text-[#315d2c] sm:text-2xl">3 分鐘幫你同家人建立一個「唔使送走主子」的安心家居計劃</h2>
+          <p class="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">完成 6 條生活問題，即時知道你屋企最應優先處理的風險、誰負責貓砂、廚房應如何分區，以及下一步可以點樣令屋企更乾淨、更易相處。</p>
+
+          <div class="mt-6 rounded-2xl border border-[#d5e9bf] bg-white/85 p-4 text-sm leading-6 text-slate-700 shadow-sm"><p class="font-extrabold text-[#315d2c]">畀伴侶／家人睇的一句話：</p><p class="mt-1">備孕安全係全家共同管理接觸風險，唔係將責任推畀隻貓。</p></div>
+
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href="#quiz" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#1f3c1b] px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-[#1f3c1b]/20 transition hover:-translate-y-0.5 hover:bg-[#315d2c]"><span>立即取得我家安心方案</span><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 5l7 7-7 7M4 12h16"/></svg></a>
+            <button onclick="copyFamilyMessage()" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#bad894] bg-white px-6 py-4 text-sm font-bold text-[#315d2c] transition hover:bg-[#f3faeb]"><span>複製畀家人睇</span><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8M8 12h8m-6-8h4a2 2 0 012 2v14a2 2 0 01-2 2h-4a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg></button>
+          </div>
+
+          <div class="mt-5 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
+            <div class="flex items-center gap-2 rounded-xl border border-[#dceccb] bg-white/80 px-3 py-2"><span class="text-base text-[#5f9637]">✓</span><span>根據官方預防原則整理</span></div>
+            <div class="flex items-center gap-2 rounded-xl border border-[#dceccb] bg-white/80 px-3 py-2"><span class="text-base text-[#5f9637]">✓</span><span>不是叫你送走主子</span></div>
+            <div class="flex items-center gap-2 rounded-xl border border-[#dceccb] bg-white/80 px-3 py-2"><span class="text-base text-[#5f9637]">✓</span><span>完成即出行動清單</span></div>
+          </div>
+
+          <p class="mt-5 max-w-2xl text-xs leading-5 text-slate-500">一般撫摸貓不是典型感染途徑；較重要的是食物、生熟食處理、泥土／貓糞接觸與手部衛生。若已懷孕、正備孕、免疫力受影響或有個人擔心，請向婦產科／家庭醫生及獸醫取得個人化意見。</p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#dcefc8] to-[#8bc34a]/30 blur-2xl"></div>
+          <div class="relative overflow-hidden rounded-[1.75rem] border border-white bg-white p-2 shadow-soft"><img src="SmellGreen_Natural_Cleaner_Cat-friendly.jpg" alt="在家中安心活動的貓咪與 SmellGREEN 天然家居清潔產品" class="h-auto w-full rounded-[1.35rem] object-cover"></div>
+          <div class="absolute -bottom-4 left-4 right-4 rounded-2xl border border-[#dceacb] bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm sm:left-8 sm:right-8"><p class="text-xs font-extrabold text-[#315d2c]">理想結果：貓仍是家人，屋企也有清楚規劃</p><p class="mt-0.5 text-xs leading-5 text-slate-600">將貓砂、飲食、食物處理與家居分區變成一家人都做得到的日常習慣。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer stack -->
+    <section class="bg-white px-4 py-10 sm:px-6 sm:py-14">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full bg-[#edf7e4] px-3 py-1 text-xs font-extrabold text-[#426d2a]"><span>🎁</span><span>免費取得你的家庭安心方案</span></div>
+          <h2 class="mt-3 text-2xl font-black text-slate-900 sm:text-3xl">完成 3 分鐘巡屋，你會即時得到 4 樣嘢</h2>
+          <p class="mt-3 text-sm leading-7 text-slate-600">唔係一堆嚇人資料，而係一份讓你、伴侶與家人今日就開始做到的家庭行動方案。</p>
+        </div>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-3xl border border-[#dceccb] bg-[#f8fcf3] p-5"><div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl shadow-sm">🧭</div><h3 class="mt-4 font-black text-slate-900">你家首個優先行動</h3><p class="mt-2 text-sm leading-6 text-slate-600">即時知道應先處理貓砂、餵食、生熟食、外出習慣，還是家居清潔分區。</p></article>
+          <article class="rounded-3xl border border-[#dceccb] bg-[#f8fcf3] p-5"><div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl shadow-sm">🧤</div><h3 class="mt-4 font-black text-slate-900">家庭分工方向</h3><p class="mt-2 text-sm leading-6 text-slate-600">明確安排誰負責每日清砂、誰處理廚房清潔，減少把所有壓力放在一個人身上。</p></article>
+          <article class="rounded-3xl border border-[#dceccb] bg-[#f8fcf3] p-5"><div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl shadow-sm">🏠</div><h3 class="mt-4 font-black text-slate-900">家居分區清單</h3><p class="mt-2 text-sm leading-6 text-slate-600">食物處理區、貓碗區、貓砂區及地板區應如何分開，令家人更容易安心。</p></article>
+          <article class="rounded-3xl border border-[#dceccb] bg-[#f8fcf3] p-5"><div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl shadow-sm">💬</div><h3 class="mt-4 font-black text-slate-900">可直接 Send 的文字</h3><p class="mt-2 text-sm leading-6 text-slate-600">一鍵複製給男友、老公、父母或奶奶，將爭拗變成一起完成的家居計劃。</p></article>
+        </div>
+
+        <div class="mt-8 text-center"><a href="#quiz" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#1f3c1b] px-7 py-4 text-sm font-extrabold text-white shadow-lg transition hover:bg-[#315d2c]"><span>立即取得我家安心方案</span><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 5l7 7-7 7M4 12h16"/></svg></a><p class="mt-3 text-xs text-slate-500">免費｜不用留電話｜完成後即時顯示結果</p></div>
+      </div>
+    </section>
+
+    <!-- Myth reduction -->
+    <section class="px-4 py-12 sm:px-6 sm:py-16">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-xs font-extrabold tracking-[.16em] text-[#648f3d]">30-SECOND MYTH CHECK</p><h2 class="mt-2 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">先幫貓平反：3 個最常見的誤解</h2><p class="mt-3 text-sm leading-6 text-slate-600">把真正要處理的接觸風險講清楚，先可以讓伴侶與家人一起分工，而不是把壓力放在貓身上。</p></div>
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <article class="rounded-3xl border border-rose-100 bg-white p-6 shadow-sm"><div class="inline-flex rounded-full bg-rose-50 px-3 py-1 text-xs font-extrabold text-rose-700">迷思 01</div><h3 class="mt-3 text-lg font-black text-slate-900">「養貓就會影響備孕」</h3><p class="mt-3 text-sm leading-7 text-slate-600">養貓本身不等於感染；重點是管理食物、泥土及貓糞等可能造成經口暴露的情境。</p></article>
+          <article class="rounded-3xl border border-sky-100 bg-white p-6 shadow-sm"><div class="inline-flex rounded-full bg-sky-50 px-3 py-1 text-xs font-extrabold text-sky-700">迷思 02</div><h3 class="mt-3 text-lg font-black text-slate-900">「摸貓就有弓形蟲」</h3><p class="mt-3 text-sm leading-7 text-slate-600">一般接觸或撫摸貓不是典型風險行為；核心是處理貓砂、泥土或生食後的手部衛生。</p></article>
+          <article class="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm"><div class="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-extrabold text-emerald-700">迷思 03</div><h3 class="mt-3 text-lg font-black text-slate-900">「懷孕一定要送走貓」</h3><p class="mt-3 text-sm leading-7 text-slate-600">公開健康建議著重每日清砂、手部衛生、避免餵生肉、減少貓外出捕獵及家庭分工，而不是一概要求棄養。</p></article>
+        </div>
+        <div class="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row"><button onclick="copyFamilyMessage()" class="rounded-xl bg-[#1f3c1b] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#315d2c]">轉發「備孕養貓安心版」給伴侶</button><a href="#quiz" class="rounded-xl border border-[#b9d996] bg-white px-5 py-3 text-sm font-bold text-[#315d2c] transition hover:bg-[#f4faec]">我都想做巡屋檢查</a></div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="scroll-mt-24 bg-[#eff8e5] px-4 py-12 sm:px-6 sm:py-16">
+      <div class="mx-auto max-w-3xl">
+        <div class="rounded-[2rem] bg-white p-5 shadow-soft sm:p-8">
+          <div class="flex flex-col gap-4 border-b border-slate-100 pb-5 sm:flex-row sm:items-center sm:justify-between">
+            <div><p class="text-xs font-extrabold tracking-[.16em] text-[#648f3d]">3-MINUTE HOME AUDIT</p><h2 class="mt-1 text-2xl font-black text-slate-900">你的貓家庭安心分數</h2><p class="mt-1 text-sm text-slate-600">只需 3 分鐘、6 條生活問題；完成後立即看到你家的優先行動、家人分工方向及相關家居管理建議。</p></div>
+            <div class="rounded-full bg-[#edf7e4] px-3 py-1.5 text-xs font-extrabold text-[#426d2a]">第 <span id="currentStep">1</span> / 6 題</div>
+          </div>
+          <div class="mt-5 flex items-center gap-2" aria-label="測驗進度"><span class="step-dot active flex h-7 w-7 items-center justify-center rounded-full text-xs font-black" data-step-dot="1">1</span><span class="h-1 flex-1 rounded bg-[#dcebc9]"></span><span class="step-dot flex h-7 w-7 items-center justify-center rounded-full bg-[#e9f2df] text-xs font-black text-[#6d8758]" data-step-dot="2">2</span><span class="h-1 flex-1 rounded bg-[#dcebc9]"></span><span class="step-dot flex h-7 w-7 items-center justify-center rounded-full bg-[#e9f2df] text-xs font-black text-[#6d8758]" data-step-dot="3">3</span><span class="h-1 flex-1 rounded bg-[#dcebc9]"></span><span class="step-dot flex h-7 w-7 items-center justify-center rounded-full bg-[#e9f2df] text-xs font-black text-[#6d8758]" data-step-dot="4">4</span><span class="h-1 flex-1 rounded bg-[#dcebc9]"></span><span class="step-dot flex h-7 w-7 items-center justify-center rounded-full bg-[#e9f2df] text-xs font-black text-[#6d8758]" data-step-dot="5">5</span><span class="h-1 flex-1 rounded bg-[#dcebc9]"></span><span class="step-dot flex h-7 w-7 items-center justify-center rounded-full bg-[#e9f2df] text-xs font-black text-[#6d8758]" data-step-dot="6">6</span></div>
+
+          <form id="auditForm" class="mt-7" onsubmit="return false;">
+            <fieldset class="quiz-step" data-step="1"><legend class="text-lg font-black text-slate-900">1. 你目前狀態？</legend><p class="mt-1 text-sm text-slate-500">這只用來調整結果語氣，不會詢問診斷、感染或生育相關敏感資料。</p><div class="mt-5 grid gap-3 sm:grid-cols-2"><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="status" data-value="newcat" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">新手養貓</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="status" data-value="planning" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">準備備孕</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="status" data-value="trying" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">備孕中</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="status" data-value="pregnant" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">已懷孕</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left sm:col-span-2" data-question="status" data-value="family" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">替家人了解</span></button></div></fieldset>
+            <fieldset class="quiz-step hidden-step" data-step="2"><legend class="text-lg font-black text-slate-900">2. 貓主要生活方式？</legend><div class="mt-5 grid gap-3 sm:grid-cols-2"><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="lifestyle" data-value="indoor" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span><strong class="font-bold">純室內</strong><small class="mt-0.5 block text-xs text-slate-500">生活模式較容易管理</small></span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="lifestyle" data-value="occasional" data-risk="1"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span><strong class="font-bold">偶爾外出</strong><small class="mt-0.5 block text-xs text-slate-500">需要留意外出接觸與捕獵</small></span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="lifestyle" data-value="outdoor" data-risk="2"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span><strong class="font-bold">可自由外出</strong><small class="mt-0.5 block text-xs text-slate-500">建議優先與獸醫討論管理方式</small></span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="lifestyle" data-value="unknown" data-risk="1"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span><strong class="font-bold">剛領養／未確定</strong><small class="mt-0.5 block text-xs text-slate-500">先建立餵食、清砂與室內習慣</small></span></button></div></fieldset>
+            <fieldset class="quiz-step hidden-step" data-step="3"><legend class="text-lg font-black text-slate-900">3. 貓平日食咩？</legend><div class="mt-5 grid gap-3 sm:grid-cols-2"><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="food" data-value="commercial" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">商業乾糧／罐頭</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="food" data-value="cooked" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">熟食</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="food" data-value="raw" data-risk="2"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span><strong class="font-bold">有食生肉</strong><small class="mt-0.5 block text-xs text-slate-500">優先改善項目</small></span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="food" data-value="unknown" data-risk="1"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">不確定</span></button></div></fieldset>
+            <fieldset class="quiz-step hidden-step" data-step="4"><legend class="text-lg font-black text-slate-900">4. 邊個通常清理貓砂？</legend><div class="mt-5 grid gap-3 sm:grid-cols-2"><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="litter" data-value="self" data-risk="1"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">我自己</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="litter" data-value="partner" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">伴侶</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="litter" data-value="family" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">家人</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="litter" data-value="rotate" data-risk="1"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">輪流／未有固定安排</span></button></div></fieldset>
+            <fieldset class="quiz-step hidden-step" data-step="5"><legend class="text-lg font-black text-slate-900">5. 你最關心哪個部分？</legend><p class="mt-1 text-sm text-slate-500">選一項最想先解決的問題，結果會直接顯示最相關的行動建議。</p><div class="mt-5 grid gap-3 sm:grid-cols-2"><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="concern" data-value="litter" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">貓砂清潔／氣味</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="concern" data-value="cleaning" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">家居消毒／清潔</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="concern" data-value="pest" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">防蟲／曱甴螞蟻</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="concern" data-value="counter" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">貓上枱／廚房衛生</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="concern" data-value="supplies" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">貓咪用品／新手準備</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="concern" data-value="family" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">家人溝通／覺得貓污糟</span></button></div></fieldset>
+            <fieldset class="quiz-step hidden-step" data-step="6"><legend class="text-lg font-black text-slate-900">6. 你最想 send 畀邊個睇？</legend><p class="mt-1 text-sm text-slate-500">完成後會為你準備適合分享的文字。</p><div class="mt-5 grid gap-3 sm:grid-cols-2"><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="recipient" data-value="boyfriend" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">男友／老公</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="recipient" data-value="parents" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">父母</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="recipient" data-value="inlaws" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">奶奶／外家</span></button><button type="button" class="quiz-option flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-left" data-question="recipient" data-value="household" data-risk="0"><span class="option-dot h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"></span><span class="font-bold">其他屋企人／朋友</span></button></div></fieldset>
+            <div class="mt-8 flex items-center justify-between gap-3 border-t border-slate-100 pt-5"><button id="prevBtn" type="button" onclick="previousStep()" class="invisible rounded-xl border border-slate-200 px-4 py-3 text-sm font-bold text-slate-600 transition hover:bg-slate-50">上一步</button><p id="quizError" class="hidden text-xs font-bold text-rose-600">請先選擇一個答案。</p><button id="nextBtn" type="button" onclick="nextStep()" class="ml-auto rounded-xl bg-[#1f3c1b] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#315d2c]">下一題</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="hidden scroll-mt-24 px-4 py-12 sm:px-6 sm:py-16">
+      <div class="mx-auto max-w-6xl">
+        <div class="mx-auto max-w-3xl text-center"><p class="text-xs font-extrabold tracking-[.16em] text-[#648f3d]">YOUR HOME ACTION PLAN</p><h2 id="resultTitle" class="mt-2 text-3xl font-black text-slate-900">你的安心行動清單</h2><p id="resultSummary" class="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-600"></p></div>
+        <div id="priorityBox" class="mx-auto mt-7 max-w-3xl rounded-3xl border border-[#d5e8c0] bg-[#f1fae8] p-5 sm:p-6"></div>
+        <div id="actionList" class="mx-auto mt-5 grid max-w-3xl gap-4 md:grid-cols-3"></div>
+        <div class="mt-12"><div class="text-center"><p class="text-xs font-extrabold tracking-[.16em] text-[#648f3d]">MATCHED HOME MODULES</p><h3 class="mt-2 text-2xl font-black text-slate-900">按你的答案，先從這些生活區域開始</h3></div><div id="recommendations" class="mt-7 grid gap-5 md:grid-cols-2"></div></div>
+        <div class="mx-auto mt-10 max-w-3xl rounded-3xl bg-[#1f3c1b] p-6 text-white sm:p-8"><p class="text-xs font-extrabold tracking-[.16em] text-[#ccecab]">SEND THIS TO YOUR FAMILY</p><h3 class="mt-2 text-xl font-black">我們不會叫你送走主子</h3><p class="mt-2 text-sm leading-6 text-white/85">我們幫你把真正要管理的風險，變成全家都做得到的日常習慣。</p><p id="shareText" class="mt-3 rounded-2xl bg-white/10 p-4 text-sm leading-7 text-white/90"></p><div class="mt-4 flex flex-col gap-3 sm:flex-row"><button onclick="copyResultMessage()" class="rounded-xl bg-[#8bc34a] px-5 py-3 text-sm font-extrabold text-[#173312] transition hover:bg-[#a6d66c]">一鍵複製分享文字</button><button onclick="navigator.share ? sharePage() : copyResultMessage()" class="rounded-xl border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10">分享給伴侶／家人</button></div></div>
+      </div>
+    </section>
+
+    <!-- Household zones -->
+    <section class="bg-[#f1f9e9] px-4 py-12 sm:px-6 sm:py-16"><div class="mx-auto max-w-6xl"><div class="mx-auto max-w-3xl text-center"><p class="text-xs font-extrabold tracking-[.16em] text-[#648f3d]">EASY HOUSEHOLD DIVISION</p><h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-3xl">一個清楚分區，家人更容易安心</h2><p class="mt-3 text-sm leading-6 text-slate-600">養貓不是污糟，是有規劃的家庭管理：食物處理、貓碗、貓砂與地板各有固定工具和流程。</p></div><div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"><article class="rounded-3xl border border-[#dceccb] bg-white p-5 shadow-sm"><div class="text-2xl">🍳</div><h3 class="mt-3 font-black text-slate-900">廚房食物處理區</h3><p class="mt-2 text-sm leading-6 text-slate-600">生熟食分開；處理食物後清洗砧板、刀具、工作枱與雙手。</p></article><article class="rounded-3xl border border-[#dceccb] bg-white p-5 shadow-sm"><div class="text-2xl">🥣</div><h3 class="mt-3 font-black text-slate-900">貓碗與餵食區</h3><p class="mt-2 text-sm leading-6 text-slate-600">使用易清洗食具與食物墊；完成清潔並待表面乾透後才讓貓使用。</p></article><article class="rounded-3xl border border-[#dceccb] bg-white p-5 shadow-sm"><div class="text-2xl">🧺</div><h3 class="mt-3 font-black text-slate-900">貓砂區</h3><p class="mt-2 text-sm leading-6 text-slate-600">每日清砂、妥善棄置、清理後洗手；可由家人建立固定分工。</p></article><article class="rounded-3xl border border-[#dceccb] bg-white p-5 shadow-sm"><div class="text-2xl">🧼</div><h3 class="mt-3 font-black text-slate-900">地板與接觸表面</h3><p class="mt-2 text-sm leading-6 text-slate-600">按清潔產品標示使用，避免寵物接觸仍濕的地面或用品。</p></article></div></div></section>
+
+    <!-- FAQ -->
+    <section class="px-4 py-12 sm:px-6 sm:py-16"><div class="mx-auto max-w-3xl"><div class="text-center"><p class="text-xs font-extrabold tracking-[.16em] text-[#648f3d]">FAQ</p><h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-3xl">備孕養貓最常見問題</h2></div><div class="mt-7 space-y-3"><article class="faq-item rounded-2xl border border-[#d9eac9] bg-white"><button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" onclick="toggleFaq(this)"><span class="font-extrabold text-slate-900">有貓係咪一定要送走？</span><span class="faq-plus text-2xl leading-none text-[#5b8737] transition">+</span></button><div class="faq-answer px-5 pb-5 text-sm leading-7 text-slate-600">不一定。重點是了解實際接觸途徑，並做好每日清理貓砂、手部衛生、避免餵生肉、管理泥土接觸及食物處理。若已懷孕、正備孕或免疫力受影響，請向醫生和獸醫取得個人化意見。</div></article><article class="faq-item rounded-2xl border border-[#d9eac9] bg-white"><button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" onclick="toggleFaq(this)"><span class="font-extrabold text-slate-900">點解要每日清理貓砂？</span><span class="faq-plus text-2xl leading-none text-[#5b8737] transition">+</span></button><div class="faq-answer px-5 pb-5 text-sm leading-7 text-slate-600">官方資料指出，若貓糞含有弓形蟲卵囊，通常需要約 1 至 5 日才變得具有感染性；每日清理可在這之前移除糞便。清理後應洗手；如你屬較高風險人士，可安排免疫功能正常的非孕家人負責日常清砂。</div></article><article class="faq-item rounded-2xl border border-[#d9eac9] bg-white"><button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" onclick="toggleFaq(this)"><span class="font-extrabold text-slate-900">產品與清潔劑可以預防弓形蟲嗎？</span><span class="faq-plus text-2xl leading-none text-[#5b8737] transition">+</span></button><div class="faq-answer px-5 pb-5 text-sm leading-7 text-slate-600">本頁不把任何產品當作弓形蟲預防或醫療保證。真正重點是每日清砂、避免餵貓生肉、食物煮熟、清洗蔬果、處理泥土後洗手，以及正確完成家居清潔流程。</div></article></div></div></section>
+
+    <!-- Final CTA -->
+    <section class="px-4 pb-12 sm:px-6 sm:pb-16"><div class="mx-auto max-w-5xl rounded-[2rem] bg-gradient-to-r from-[#1f3c1b] to-[#6faa3d] px-6 py-10 text-center shadow-xl sm:px-12 sm:py-12"><p class="text-sm font-bold text-[#d9f2bd]">安心知識 → 家居分工 → 清潔規劃 → 針對性用品</p><h2 class="mx-auto mt-2 max-w-3xl text-2xl font-black leading-tight text-white sm:text-4xl">唔需要放棄家人；一齊建立可執行的安心屋企</h2><p class="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/85">3 分鐘、6 條問題、即時行動清單。由今天第一步開始，不用一次過重整全屋。</p><a href="#quiz" class="mt-7 inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-7 py-4 text-sm font-black text-[#1f3c1b] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#f4faec]"><span>立即解鎖我家安心計劃</span><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 5l7 7-7 7M4 12h16"/></svg></a></div></section>
+  </main>
+
+  <footer class="border-t border-slate-100 bg-white px-4 py-8 text-center text-xs leading-6 text-slate-500"><p class="font-semibold text-slate-600">GreenSTORE HK × Moolilagang 養貓家庭安心巡屋</p><p class="mx-auto mt-2 max-w-3xl">本頁只供一般家居衛生與寵物照護教育參考，不構成醫療、孕期或獸醫診斷。若你已懷孕、正備孕、免疫力受影響、擔心曾接觸病原或貓咪出現不適，請盡快諮詢婦產科／家庭醫生及獸醫。</p><p class="mt-2">© 2026 GreenSTORE HK. All Rights Reserved.</p></footer>
+  <div id="toast" class="pointer-events-none fixed bottom-6 right-6 z-50 translate-y-20 rounded-2xl bg-slate-900 px-4 py-3 text-xs text-white opacity-0 shadow-xl transition-all duration-300 sm:text-sm"></div>
+
+  <script>
+    const answers = {};
+    let currentStep = 1;
+    let savedShareText = '';
+    const productLinks = { cleaner: 'https://greenstore.hk/collections/natural-cleaner', pest: 'https://greenstore.hk/search?q=%E9%98%B2%E8%9F%B2', cat: 'https://greenstore.hk/search?q=%E8%B2%93' };
+
+    document.querySelectorAll('.quiz-option').forEach(button => {
+      button.addEventListener('click', () => {
+        const question = button.dataset.question;
+        answers[question] = { value: button.dataset.value, risk: Number(button.dataset.risk || 0), label: button.innerText.trim() };
+        document.querySelectorAll(`[data-question="${question}"]`).forEach(option => option.classList.remove('selected'));
+        button.classList.add('selected');
+        document.getElementById('quizError').classList.add('hidden');
+      });
+    });
+
+    function nextStep() {
+      const fieldset = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+      const requiredQuestion = fieldset.querySelector('.quiz-option').dataset.question;
+      if (!answers[requiredQuestion]) { document.getElementById('quizError').classList.remove('hidden'); return; }
+      if (currentStep < 6) showStep(currentStep + 1);
+      else { renderResults(); document.getElementById('results').classList.remove('hidden'); document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+
+    function previousStep() { if (currentStep > 1) showStep(currentStep - 1); }
+
+    function showStep(step) {
+      document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.add('hidden-step');
+      document.querySelector(`.quiz-step[data-step="${step}"]`).classList.remove('hidden-step');
+      currentStep = step;
+      document.getElementById('currentStep').textContent = step;
+      document.getElementById('prevBtn').classList.toggle('invisible', step === 1);
+      document.getElementById('nextBtn').textContent = step === 6 ? '立即解鎖我家安心計劃' : '下一題';
+      document.getElementById('quizError').classList.add('hidden');
+      document.querySelectorAll('.step-dot').forEach(dot => { const n = Number(dot.dataset.stepDot); dot.classList.remove('active', 'done'); if (n < step) dot.classList.add('done'); if (n === step) dot.classList.add('active'); });
+    }
+
+    function renderResults() {
+      const risk = Object.values(answers).reduce((sum, item) => sum + (item.risk || 0), 0);
+      const concern = answers.concern?.value || 'cleaning';
+      const status = answers.status?.value || 'planning';
+      const lifestyle = answers.lifestyle?.value || 'indoor';
+      const food = answers.food?.value || 'commercial';
+      const litter = answers.litter?.value || 'self';
+      const recipient = answers.recipient?.value || 'household';
+      const tier = risk >= 4 ? 'priority' : risk >= 2 ? 'improve' : 'good';
+      const resultTitle = document.getElementById('resultTitle');
+      const resultSummary = document.getElementById('resultSummary');
+      const priorityBox = document.getElementById('priorityBox');
+      const microActions = '<div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-[#dceccb] bg-white px-3 py-1.5 text-xs font-bold text-[#426d2a]">今日：安排清砂負責人</span><span class="rounded-full border border-[#dceccb] bg-white px-3 py-1.5 text-xs font-bold text-[#426d2a]">今晚：檢查貓咪餵食</span><span class="rounded-full border border-[#dceccb] bg-white px-3 py-1.5 text-xs font-bold text-[#426d2a]">今週：完成廚房分區</span></div>';
+
+      if (tier === 'good') {
+        resultTitle.textContent = '你已建立不少良好習慣';
+        resultSummary.textContent = '室內生活、商業貓糧或熟食、每日清砂與良好廚房衛生，都是有幫助的做法。下一步是把這些習慣變成全家都有共識的日常分工。';
+        priorityBox.innerHTML = '<p class="text-xs font-extrabold tracking-wider text-[#648f3d]">首個優先行動</p><h3 class="mt-1 text-xl font-black text-[#1f3c1b]">維持「每日清砂＋手部衛生＋生熟食分區」</h3><p class="mt-2 text-sm leading-6 text-slate-600">繼續讓貓以室內生活、商業糧或煮熟食物為主；處理生肉、泥土或貓砂後洗手，廚房工具與貓砂用品不要混用。</p>' + microActions;
+      } else if (tier === 'improve') {
+        resultTitle.textContent = '不用恐慌，有 2–3 項習慣值得改善';
+        resultSummary.textContent = '你的重點是建立貓砂分工、改善食物處理與減少家居接觸風險。這不是代表已經有問題，而是現在開始做會更安心。';
+        priorityBox.innerHTML = '<p class="text-xs font-extrabold tracking-wider text-[#648f3d]">首個優先行動</p><h3 class="mt-1 text-xl font-black text-[#1f3c1b]">完成「7 日安心行動計劃」的第一步</h3><p class="mt-2 text-sm leading-6 text-slate-600">先訂立每日清砂與洗手安排，再檢視貓咪是否有生肉飲食或可自由外出的情況；把廚房生熟食處理與貓用品清潔分區。</p>' + microActions;
+      } else {
+        resultTitle.textContent = '建議優先處理幾項生活習慣';
+        resultSummary.textContent = '這不代表一定有問題，而是你家有幾項可立即改善的接觸情境。先由貓糧、貓砂清理和廚房衛生開始；如已懷孕或免疫力受影響，請向醫生和獸醫取得個人化意見。';
+        priorityBox.innerHTML = '<p class="text-xs font-extrabold tracking-wider text-[#648f3d]">首個優先行動</p><h3 class="mt-1 text-xl font-black text-[#1f3c1b]">今天就安排「不餵生肉＋每日清砂＋固定分工」</h3><p class="mt-2 text-sm leading-6 text-slate-600">貓以商業食物或煮熟食物為主、減少自由外出／捕獵；安排免疫功能正常的非孕家人每日清砂，並在處理食物、泥土及貓砂後徹底洗手。</p>' + microActions;
+      }
+
+      const actions = [];
+      if (food === 'raw') actions.push(['🍽️', '餵食先改善', '停止或盡快與獸醫討論生肉／未熟肉飲食，改以商業配方或妥善煮熟食物為主。']);
+      if (lifestyle === 'outdoor' || lifestyle === 'occasional') actions.push(['🏠', '減少外出與捕獵', '優先建立室內生活管理，減少貓接觸獵物、受污染泥土或未熟肉的機會。']);
+      if (litter === 'self' && (status === 'pregnant' || status === 'trying' || status === 'planning')) actions.push(['🧤', '安排貓砂分工', '如適用，請與伴侶或家人建立每日清砂分工；清理後用肥皂和清水洗手。']);
+      actions.push(['🧼', '廚房分區清潔', '生熟食、砧板、刀具、工作枱與貓碗區分開使用與清潔，避免交叉接觸。']);
+      while (actions.length < 3) actions.push(['🤍', '共同溝通', '把這份行動清單分享給家人，讓「安心」變成共同習慣，而不是你一個人的壓力。']);
+      document.getElementById('actionList').innerHTML = actions.slice(0, 3).map(([icon, title, text]) => `<article class="rounded-3xl border border-slate-100 bg-white p-5 shadow-sm"><div class="text-2xl">${icon}</div><h3 class="mt-3 font-black text-slate-900">${title}</h3><p class="mt-2 text-sm leading-6 text-slate-600">${text}</p></article>`).join('');
+      const modules = getRecommendationModules(concern, tier);
+      document.getElementById('recommendations').innerHTML = modules.map(module => `<article class="rounded-3xl border border-[#dceccb] bg-white p-6 shadow-sm"><div class="flex items-start gap-3"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#edf7e4] text-xl">${module.icon}</div><div><h3 class="text-lg font-black text-slate-900">${module.title}</h3><p class="mt-2 text-sm leading-6 text-slate-600">${module.text}</p></div></div><p class="mt-4 rounded-2xl bg-[#f5faef] p-3 text-xs leading-5 text-[#426d2a]">${module.note}</p><a href="${module.link}" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-xl bg-[#1f3c1b] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#315d2c]">${module.cta}</a></article>`).join('');
+      const recipientWord = recipient === 'boyfriend' ? '伴侶' : recipient === 'parents' ? '父母' : recipient === 'inlaws' ? '家人' : '屋企人';
+      savedShareText = '我做咗個「有貓家庭安心巡屋」，原來真正要處理嘅唔係叫人送走隻貓，而係做好貓砂分工、避免餵生肉、注意生熟食處理同日常清潔。你可唔可以同我一齊睇 3 分鐘？我想我哋一齊令屋企更安心。';
+      document.getElementById('shareText').textContent = `想 send 畀${recipientWord}：${savedShareText}`;
+    }
+
+    function getRecommendationModules(concern, tier) {
+      const litterModule = { icon: '🧺', title: '貓砂區清潔與除味', text: '先令貓砂區乾淨、好打理、沒有強烈殘留氣味。重點不是用最濃的味道遮蓋，而是定期清潔、通風、妥善棄置與正確乾燥。', note: '弓形蟲防護的重點是每日清砂、正確處理及洗手；本頁不把清潔產品描述為可預防弓形蟲。', link: productLinks.cleaner, cta: '先做貓砂區安心升級' };
+      const cleaningModule = { icon: '🧼', title: '養貓家庭廚房及日常清潔', text: '廚房、餐桌與地板：先分清潔需求，再揀合適用品。減少殘留，並讓所有清潔後表面完全乾透，再讓貓重新接觸。', note: '食物處理區應分開工具；處理生肉後清洗砧板、刀具、工作枱及雙手。', link: productLinks.cleaner, cta: '建立低刺激日常清潔流程' };
+      const pestModule = { icon: '🪳', title: '有貓家庭防蟲安排', text: '有蟲，不代表要在全屋亂噴。先找出害蟲種類、入屋位置與食物源頭，再選擇針對性、可控制並依標籤安全使用的方案。', note: '所有防蟲用品應嚴格依包裝標示使用，並存放或放置於寵物無法接觸的位置；誤食或不適請即時聯絡獸醫。', link: productLinks.pest, cta: '先找出入蟲位置，再選擇處理方式' };
+      const essentialsModule = { icon: '🥣', title: '貓碗、玩具與環境豐富化', text: '讓貓有自己的食、玩、休息區，家人會更容易安心。清晰餵食區、易清洗貓碗、食物墊與適量玩具，亦能減少上枱、翻垃圾桶等誘因。', note: '這是家庭秩序與日常整理的方案，不是醫療或弓形蟲預防產品。', link: productLinks.cat, cta: '建立貓咪專屬食玩區' };
+      const familyModule = { icon: '🤝', title: '讓家人看見「有規劃的養貓」', text: '把每日清砂、廚房分區、餵食方式和清潔流程寫成簡單分工，能把「貓很污糟」的爭拗，轉成全家一起完成的安心習慣。', note: '如已懷孕、正備孕或免疫力受影響，請將個人情況帶去與婦產科／家庭醫生和獸醫討論。', link: '#results', cta: '查看家庭分享文字' };
+      let primary = cleaningModule;
+      if (concern === 'litter') primary = litterModule;
+      if (concern === 'pest') primary = pestModule;
+      if (concern === 'supplies') primary = essentialsModule;
+      if (concern === 'family') primary = familyModule;
+      if (concern === 'counter') primary = cleaningModule;
+      const secondary = concern === 'pest' ? essentialsModule : concern === 'family' ? litterModule : concern === 'litter' ? cleaningModule : essentialsModule;
+      const third = tier === 'priority' ? litterModule : familyModule;
+      return [primary, secondary, third].filter((item, index, array) => array.findIndex(x => x.title === item.title) === index).slice(0, 3);
+    }
+
+    function copyText(text, message) { if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => showToast(message)).catch(() => fallbackCopy(text, message)); else fallbackCopy(text, message); }
+    function fallbackCopy(text, message) { const textarea = document.createElement('textarea'); textarea.value = text; document.body.appendChild(textarea); textarea.select(); document.execCommand('copy'); textarea.remove(); showToast(message); }
+    function copyFamilyMessage() { copyText('我搵到一個簡單 checklist，講清楚有貓備孕真正要注意乜。可唔可以同我一齊做完？唔係要爭拗，係想一齊令屋企更安心。', '已複製訊息，可直接 send 畀伴侶或家人。'); }
+    function copyResultMessage() { copyText(savedShareText || '我做咗個「有貓家庭安心巡屋」，原來真正要處理嘅唔係叫人送走隻貓，而係做好貓砂分工、避免餵生肉、注意生熟食處理同日常清潔。你可唔可以同我一齊睇 3 分鐘？我想我哋一齊令屋企更安心。', '已複製你的家庭分享文字。'); }
+    function sharePage() { navigator.share({ title: '有貓都可以安心備孕｜3 分鐘家庭安心計劃', text: savedShareText || '有貓都可以安心備孕：一齊做 3 分鐘家庭風險巡查。', url: window.location.href }).catch(() => {}); }
+    function showToast(message) { const toast = document.getElementById('toast'); toast.textContent = message; toast.classList.remove('translate-y-20', 'opacity-0'); toast.classList.add('translate-y-0', 'opacity-100'); setTimeout(() => { toast.classList.remove('translate-y-0', 'opacity-100'); toast.classList.add('translate-y-20', 'opacity-0'); }, 3200); }
+    function toggleFaq(button) { const item = button.closest('.faq-item'); const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open')); if (!isOpen) item.classList.add('open'); }
+  </script>
+</body>
+</html>

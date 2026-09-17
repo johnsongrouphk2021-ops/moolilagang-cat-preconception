@@ -295,8 +295,8 @@
 
     function copyText(text, message) { if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => showToast(message)).catch(() => fallbackCopy(text, message)); else fallbackCopy(text, message); }
     function fallbackCopy(text, message) { const textarea = document.createElement('textarea'); textarea.value = text; document.body.appendChild(textarea); textarea.select(); document.execCommand('copy'); textarea.remove(); showToast(message); }
-    function copyFamilyMessage() { copyText('我搵到一個簡單 checklist，講清楚有貓備孕真正要注意乜。可唔可以同我一齊做完？唔係要爭拗，係想一齊令屋企更安心。', '已複製訊息，可直接 send 畀伴侶或家人。'); }
-    function copyResultMessage() { copyText(savedShareText || '我做咗個「有貓家庭安心巡屋」，原來真正要處理嘅唔係叫人送走隻貓，而係做好貓砂分工、避免餵生肉、注意生熟食處理同日常清潔。你可唔可以同我一齊睇 3 分鐘？我想我哋一齊令屋企更安心。', '已複製你的家庭分享文字。'); }
+    function copyFamilyMessage() { copyText('我搵到一個簡單 checklist https://moolilagang-cat-preconception.vercel.app/，講清楚有貓備孕真正要注意乜。可唔可以同我一齊做完？唔係要爭拗，係想一齊令屋企更安心。', '已複製訊息，可直接 send 畀伴侶或家人。'); }
+    function copyResultMessage() { copyText(savedShareText || '我做咗個「有貓家庭安心巡屋」，原來真正要處理嘅唔係叫人送走隻貓，而係做好貓砂分工、避免餵生肉、注意生熟食處理同日常清潔。你可唔可以同我一齊睇 3 分鐘？我想我哋一齊令屋企更安心。 https://moolilagang-cat-preconception.vercel.app/', '已複製你的家庭分享文字。'); }
     function sharePage() { navigator.share({ title: '有貓都可以安心備孕｜3 分鐘家庭安心計劃', text: savedShareText || '有貓都可以安心備孕：一齊做 3 分鐘家庭風險巡查。', url: window.location.href }).catch(() => {}); }
     function showToast(message) { const toast = document.getElementById('toast'); toast.textContent = message; toast.classList.remove('translate-y-20', 'opacity-0'); toast.classList.add('translate-y-0', 'opacity-100'); setTimeout(() => { toast.classList.remove('translate-y-0', 'opacity-100'); toast.classList.add('translate-y-20', 'opacity-0'); }, 3200); }
     function toggleFaq(button) { const item = button.closest('.faq-item'); const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open')); if (!isOpen) item.classList.add('open'); }
